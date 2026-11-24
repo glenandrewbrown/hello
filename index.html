@@ -34,6 +34,14 @@ a:hover{border-color:#E5B60C}
 a:active{transform:scale(.98)}
 a:focus-visible{outline:3px solid #fff;outline-offset:3px}
 svg{width:1.6rem;height:1.6rem;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+form{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid #2c4256;display:grid;gap:.65rem}
+h2{font:600 1.125rem/1.2 inherit;font-family:inherit;color:#fff}
+label{display:grid;gap:.3rem;font-size:.9375rem;color:#D5DCE2}
+input,button{font:inherit;min-height:3.25rem;border-radius:.75rem;padding:0 1rem;width:100%}
+input{border:1.5px solid #4a6175;background:#0d1b27;color:#fff;font-size:1.0625rem}
+input:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+button{border:1.5px solid #E5B60C;background:#E5B60C;color:#0A1520;font-weight:700;font-size:1.125rem;cursor:pointer;margin-top:.2rem}
+#sent{margin:.2rem 0 0;font-size:.9375rem;color:#D5DCE2;text-align:center;min-height:1.4em}
 @media (prefers-reduced-motion:reduce){a{transition:none}a:active{transform:none}}
 </style>
 </head>
@@ -51,6 +59,19 @@ svg{width:1.6rem;height:1.6rem;flex:none;fill:none;stroke:currentColor;stroke-wi
 <li><a href="https://instagram.com/glenandrewbrown"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><path d="M17.3 6.700v.01"/></svg>Instagram</a></li>
 <li><a href="https://www.imdb.com/name/nm13525159/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="2.5"/><path d="M5 9v6M7.8 15V9l1.9 4 1.9-4v6M14 9v6c3 0 3-6 0-6M18 9v6c2.6.2 2.6-3.8 0-3.6"/></svg>IMDb</a></li>
 </ul>
+<!-- shortcut: the button opens the visitor's own email app with the message written (no server here); swap the action for the site's contact relay or a form service when one is public -->
+<form id="say" action="mailto:glen@glenandrewbrown.com?subject=Hello%20from%20your%20details%20page" method="post" enctype="text/plain">
+<h2>Leave your details</h2>
+<label>Name<input name="name" autocomplete="name" required maxlength="120"></label>
+<label>Email<input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200"></label>
+<button type="submit">Send to Glen</button>
+<p id="sent" role="status"></p>
+</form>
 </main>
+<script>
+document.getElementById('say').addEventListener('submit',function(e){e.preventDefault();var f=e.target,n=f.name.value.trim(),m=f.email.value.trim();
+location.href='mailto:glen@glenandrewbrown.com?subject='+encodeURIComponent('Hello from '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+m+'\n\n');
+document.getElementById('sent').textContent='Your email app has opened with the message: press send there.'})
+</script>
 </body>
 </html>
