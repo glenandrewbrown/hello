@@ -54,13 +54,13 @@ button{border:1.5px solid #E5B60C;background:#E5B60C;color:#0A1520;font-weight:7
 </header>
 <ul>
 <li><a href="https://glenandrewbrown.com"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c5.5 5.5 5.5 13.5 0 19M12 2.500c-5.5 5.5-5.5 13.5 0 19"/></svg>Website</a></li>
-<li><a href="https://open.spotify.com/artist/5f54oq8ldTgEPlZxbrqt44"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M6.5 9c4-1.2 8-.8 11.3 1M7 12.400c3.4-.9 6.6-.5 9.3 1M7.6 15.600c2.7-.6 5.2-.3 7.3.9"/></svg>Spotify</a></li>
+<li><a href="https://open.spotify.com/artist/7IRkn7tBPlFCZuysirdm24"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M6.5 9c4-1.2 8-.8 11.3 1M7 12.400c3.4-.9 6.6-.5 9.3 1M7.6 15.600c2.7-.6 5.2-.3 7.3.9"/></svg>Spotify</a></li>
 <li><a href="https://www.linkedin.com/in/glenandrewbrown/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/><path d="M7 10.500V17M7 7v.1M11 17v-6.500M11 13.500c0-4 6-4 6 0V17"/></svg>LinkedIn</a></li>
 <li><a href="https://instagram.com/glenandrewbrown"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><path d="M17.3 6.700v.01"/></svg>Instagram</a></li>
 <li><a href="https://www.imdb.com/name/nm13525159/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="2.5"/><path d="M5 9v6M7.8 15V9l1.9 4 1.9-4v6M14 9v6c3 0 3-6 0-6M18 9v6c2.6.2 2.6-3.8 0-3.6"/></svg>IMDb</a></li>
 </ul>
 <!-- shortcut: the button opens the visitor's own email app with the message written (no server here); swap the action for the site's contact relay or a form service when one is public -->
-<form id="say" action="mailto:glen@glenandrewbrown.com?subject=Hello%20from%20your%20details%20page" method="post" enctype="text/plain">
+<form id="say" action="mailto:info@glenandrewbrown.com?subject=Hello%20from%20your%20details%20page" method="post" enctype="text/plain">
 <h2>Leave your details</h2>
 <label>Name<input name="name" autocomplete="name" required maxlength="120"></label>
 <label>Email<input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200"></label>
@@ -70,7 +70,7 @@ button{border:1.5px solid #E5B60C;background:#E5B60C;color:#0A1520;font-weight:7
 </main>
 <script>
 document.getElementById('say').addEventListener('submit',function(e){e.preventDefault();var f=e.target,n=f.name.value.trim(),m=f.email.value.trim();
-location.href='mailto:glen@glenandrewbrown.com?subject='+encodeURIComponent('Hello from '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+m+'\n\n');
+location.href='mailto:info@glenandrewbrown.com?subject='+encodeURIComponent('Hello from '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+m+'\n\n');
 document.getElementById('sent').textContent='Your email app has opened with the message: press send there.'})
 </script>
 </body>
